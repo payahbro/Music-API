@@ -1,0 +1,2 @@
+ALTER TABLE IF EXISTS tracks
+    DROP COLUMN IF EXISTS version;

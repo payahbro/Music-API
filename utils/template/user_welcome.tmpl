@@ -1,0 +1,44 @@
+{{define "subject"}} Welcome to Spookify!{{end}}
+
+{{define "plainBody"}}
+    Hi, {{.Name}}
+
+    Thanks for signing up for a Spookify account. We're excited to have you on board.
+    For future reference, you user ID number is {{.Id}}.
+
+    Please send a request to the `PUT /v1/users/activated` endpoint with the following JSON
+    body to activate your account:
+
+    {"token": "{{.activationToken}}"}
+
+    Please note that this is a one-time use token and it will expire in 3 days.
+
+    Thanks,
+    The Spookify Team
+{{end}}
+
+
+{{define "htmlBody"}}
+<!doctype html>
+<html>
+<head>
+    <meta name="viewpoint" content="width=device-width"/>
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8"/>
+</head>
+
+<body>
+    <p>Hi, {{.Name}}</p>
+    <p>Thanks for signing up for a Spookify account. We're excited to have you on board!</p>
+    <p>For future reference, your user ID number is {{.Id}}.</p>
+    <p>Please send a request to the <code>PUT /v1/users/activated</code> endpoint with the
+    following JSON body to activate your account:</p>
+    <pre><code>
+    {"token": "{{.activationToken}}"}
+    </code></pre>
+    <p>Please note that this is a one-time use token and it will expire in 3 days.</p>
+    <p>Thanks,</p>
+    <p>The Spookify Team</p>
+</body>
+
+</html>
+{{end}}
